@@ -32,7 +32,7 @@ class ChatGPTServer:
         self.chatgpt_free_instances: list = []
         self.chatgpt_plus_instances: list = []
         self.loop = None        
-        with open('./settings.json', 'r') as f:
+        with open('./settings.json', 'r',encoding="utf-8") as f:
             self.settings = json.load(f)
 
     @classmethod
@@ -43,7 +43,7 @@ class ChatGPTServer:
         current_chatgpt_any = 0
         current_chatgpt_free = 0
         current_chatgpt_plus = 0
-        with open('./settings.json', 'r') as f:
+        with open('./settings.json', 'r',encoding="utf-8") as f:
             settings = json.load(f)
         self = cls(current_chatgpt_any=current_chatgpt_any, current_chatgpt_free=current_chatgpt_free, current_chatgpt_plus=current_chatgpt_plus, settings=settings)
         await self.__load_chatgpt_instances()

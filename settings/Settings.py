@@ -5,7 +5,7 @@ import os
 import platform
 
 #LOAD SETTINGS FROM SETTINGS.JSON
-with open('./settings.json', 'r') as f:
+with open('./settings.json', 'r',encoding="utf-8") as f:
     settings = json.load(f)
 
 #SETUP API TERMINAL NAME
@@ -28,9 +28,9 @@ if not json_key_exists(settings, 'api_server', 'app_secret'):                   
     add_json_key(settings, generate_api_key(), 'api_server', 'app_secret')          #add admin_api_key to settings.json
     update_settings = True
 if update_settings:
-    with open('./settings.json', 'w') as f:
-        json.dump(settings, f, indent=4)
-    with open('./settings.json', 'r') as f:
+    with open('./settings.json', 'w',encoding="utf-8") as f:
+        json.dump(settings, f, ensure_ascii=False, indent=4)
+    with open('./settings.json', 'r',encoding="utf-8") as f:
         settings = json.load(f)
 
 #SETUP ADMIN API KEY IF NOT PRESENT
@@ -87,9 +87,9 @@ API_PORT = os.environ.get("API_PORT") or int(settings['api_server']['port'])
 API_LOCAL_BASE_URL = f'http://{API_HOST}:{API_PORT}'
 API_DEFAULT_PROMPT = (
     f'Say the following: You did not enter a prompt. URL should be http://<IP>:<PORT>/chat?prompt=<prompt>\n'
-    f'Join us at https://discord.gg/lukium for the best source of AI resources and tools,'
-    f'including free Stable Diffusion Servers running on dedicated RTX 3090 GPUs,'
-    f'as well as a community of AI enthusiasts.'
+    f'所以我打算在這裡打廣告,'
+    f'https://thisisch.net,'
+    f'波奇我婆'
 )
 
 #SETUP API ENDPOINT URL CONSTANS

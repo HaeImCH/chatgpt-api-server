@@ -48,7 +48,7 @@ class ChatGPT:
 
     async def __configure_user(self):
         self.access_token = self.user_access_token
-        with open('./settings.json', 'r') as f:
+        with open('./settings.json', 'r',encoding="utf-8") as f:
             settings = json.load(f)
         api_server_settings = settings['api_server']
         #Make sure the instance has a proxy in settings.json either under "opeanai" or under "api_server"
@@ -76,7 +76,7 @@ class ChatGPT:
 
     
     async def __configure(self):
-        with open('./settings.json', 'r') as f:
+        with open('./settings.json', 'r',encoding="utf-8") as f:
             settings = json.load(f)
         instance_settings = settings['openai']['instances'][self.instance]      
         api_server_settings = settings['api_server']

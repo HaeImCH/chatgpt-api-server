@@ -1,5 +1,11 @@
 {
-    "API_KEYS": {  
-
+    "API_KEYS": {
+        "rdlsAiw6sHFk6Tjtt7iIoCNiP9JxBulm": {
+            "user_id": "changeme",
+            "username": "changeme",
+            "plus": false,
+            "is_admin": true,
+            "is_client": true
+        }
     }
 }
